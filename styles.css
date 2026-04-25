@@ -368,9 +368,17 @@ ul {
     box-shadow: 0 20px 40px rgba(0,0,0,0.4);
     border: 1px solid var(--glass-border);
     transition: var(--transition-medium);
+    animation: float-avatar 6s ease-in-out infinite;
+}
+
+@keyframes float-avatar {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
 }
 
 .hero-image:hover {
+    animation-play-state: paused;
     transform: translateY(-10px) rotate(2deg);
     border-color: var(--accent-primary);
 }
@@ -525,7 +533,22 @@ ul {
     border-radius: 20px;
     font-size: 0.9rem;
     font-family: var(--font-mono);
-    transition: var(--transition-fast);
+    transition: all var(--transition-fast);
+}
+
+.section.visible .skill-tag {
+    animation: pop-in 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+}
+
+.section.visible .skill-category:nth-child(1) .skill-tag { animation-delay: 0.1s; }
+.section.visible .skill-category:nth-child(2) .skill-tag { animation-delay: 0.2s; }
+.section.visible .skill-category:nth-child(3) .skill-tag { animation-delay: 0.3s; }
+.section.visible .skill-category:nth-child(4) .skill-tag { animation-delay: 0.4s; }
+
+@keyframes pop-in {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 .skill-category:hover .skill-tag {
@@ -547,9 +570,23 @@ ul {
 }
 
 .project-card {
-    transition: var(--transition-medium);
+    transition: transform var(--transition-medium), border-color var(--transition-medium), box-shadow var(--transition-medium);
     overflow: hidden;
     height: 100%;
+    position: relative;
+}
+
+.section.visible .project-card {
+    animation: slideUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+.section.visible .project-card:nth-child(1) { animation-delay: 0.2s; }
+.section.visible .project-card:nth-child(2) { animation-delay: 0.4s; }
+
+@keyframes slideUp {
+    0% { opacity: 0; top: 30px; }
+    100% { opacity: 1; top: 0; }
 }
 
 .project-card:hover {

@@ -313,7 +313,41 @@
                     </div>
                 </div>
 
-                <a href="https://wa.me/919390221446?text=Hi%20Roopa,%20I%20found%20your%20portfolio%20and%20would%20like%20to%20connect!" target="_blank" class="btn btn-primary contact-btn">Send me a message <i class="fab fa-whatsapp"></i></a>
+                <form class="contact-form" action="https://formsubmit.co/roopasri.0812@gmail.com" method="POST">
+                    <!-- FormSubmit Configuration -->
+                    <input type="hidden" name="_subject" value="New message from portfolio!">
+                    <input type="hidden" name="_template" value="table">
+                    
+                    <h3 class="form-title">Send me a <span class="highlight">message</span></h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstname">First Name</label>
+                            <input type="text" id="firstname" name="First Name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lastname" name="Last Name" placeholder="Surname" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="Email" placeholder="mail@example.com" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="Subject" placeholder="Let's discuss an opportunity" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="Message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary submit-btn">Send Message <i class="fas fa-paper-plane"></i></button>
+                </form>
             </div>
         </section>
     </main>
